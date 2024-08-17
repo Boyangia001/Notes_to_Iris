@@ -51,3 +51,40 @@ word[2:]    # Everything except the first two characters
 这样的slice可以让 s[:i] + s[i:] = s 。  
 对于非负indices，slice的长度是indices间的差，前提是这两个indices都在范围内。例如， word[1:3] 的长度是 2 。
 
+### Bk3_Ch2_03
+```python
+import numpy as np
+
+a_i = np.linspace(1,10,10)
+print(a_i)
+
+a_i_cumprod = np.cumprod(a_i)
+np.set_printoptions(suppress=True)
+print(a_i_cumprod)
+```
+#### np.linspace(start, stop, num) 
+是 NumPy 中的一个函数，用于创建一个包含 num 个等间距数字的数组。  
+start：序列的起始值。  
+stop：序列的结束值（包含在序列中）。  
+num：要生成的数字个数。    
+a_i = np.linspace(1, 10, 10) 会创建一个包含 10 个数字的数组 a_i，这些数字均匀分布在 1 到 10 之间（包含 1 和 10）。  
+输出：  
+```python
+[ 1.  2.  3.  4.  5.  6.  7.  8.  9. 10.]
+```
+#### 2. suppress=True
+np.set_printoptions(suppress=True) 用于设置 NumPy 数组的打印选项。  
+suppress：一个布尔值，用于控制是否抑制使用科学计数法打印小数。  
+当 suppress=True 时，NumPy 会尽可能使用普通的小数表示法打印数组元素，即使它们非常小。  
+np.set_printoptions(suppress=True) 会使得 a_i_cumprod 数组的输出结果不使用科学计数法。  
+
+如果没有设置 suppress=True，a_i_cumprod 的输出结果可能如下所示（取决于 NumPy 版本）：
+```python
+[1.00000000e+00 2.00000000e+00 6.00000000e+00 2.40000000e+01
+ 1.20000000e+02 7.20000000e+02 5.04000000e+03 4.03200000e+04
+ 3.62880000e+05 3.62880000e+06]
+```
+设置了 suppress=True 后，输出结果会更易读：  
+```python
+[1 2 6 24 120 720 5040 40320 362880 3628800]
+```
