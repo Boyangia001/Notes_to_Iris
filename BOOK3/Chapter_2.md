@@ -23,3 +23,31 @@ format() 的作用: format() 方法会将传入的参数依次替换字符串中
 ```python
 The product of 2 and 3 is 6
 ```
+### Bk3_Ch2_02
+
+```python
+# define a function to calculate factorial
+
+num = int(input("Enter an integer: "))
+
+factorial = 1
+
+# check if the number is negative, positive or zero
+if num < 0:
+    print("Factorial does not exist for negative numbers")
+elif num == 0:
+    print("The factorial of 0 is ", factorial)
+else:
+#针对这个循环，注意python中的range not include the upper bound
+    for i in range(1,num + 1):
+       factorial = factorial*i
+    print("The factorial of",num," is ",factorial)
+```
+至于python为什么采用左闭右开的区间取值形式，document中有解释：  
+```python
+word[:2]    # The first two characters
+word[2:]    # Everything except the first two characters
+```
+这样的slice可以让 s[:i] + s[i:] = s 。  
+对于非负indices，slice的长度是indices间的差，前提是这两个indices都在范围内。例如， word[1:3] 的长度是 2 。
+
