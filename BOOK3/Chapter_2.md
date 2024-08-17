@@ -62,7 +62,7 @@ a_i_cumprod = np.cumprod(a_i)
 np.set_printoptions(suppress=True)
 print(a_i_cumprod)
 ```
-#### np.linspace(start, stop, num) 
+#### 1. np.linspace(start, stop, num) 
 是 NumPy 中的一个函数，用于创建一个包含 num 个等间距数字的数组。  
 start：序列的起始值。  
 stop：序列的结束值（包含在序列中）。  
