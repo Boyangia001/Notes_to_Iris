@@ -28,7 +28,6 @@ import numpy as np
 result = f(np.array([0, np.pi/2, np.pi]))
 print(result)  # 输出 [1. 0. 1.]
 ```
-解释
 符号定义：首先，我们定义了一个符号变量 x，它代表数学中的一个变量。  
 符号表达式：然后，我们创建了一个符号表达式 sin(x) + cos(x)，这在 SymPy 中只是一个数学公式，还不能直接用于数值计算。  
 使用 lambdify：通过 lambdify，我们将这个符号表达式转换为一个可执行的 Python 函数 f。在这个过程中，我们指定了使用 numpy 作为模块，这意味着转换后的函数将使用 NumPy 库中的数值函数来计算 sin 和 cos。  
